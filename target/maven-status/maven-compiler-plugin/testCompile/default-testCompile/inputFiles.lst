@@ -1,0 +1,4 @@
+/Users/mister_bil/Development/gestion-evenementiel/src/test/java/misterbil/eventing/api/OutboxEventControllerTest.java
+/Users/mister_bil/Development/gestion-evenementiel/src/test/java/misterbil/eventing/demo/CommandeProjectionIntegrationTest.java
+/Users/mister_bil/Development/gestion-evenementiel/src/test/java/misterbil/eventing/outbox/OutboxRelayIntegrationTest.java
+/Users/mister_bil/Development/gestion-evenementiel/src/test/java/misterbil/eventing/support/ControllableEventPublisher.java

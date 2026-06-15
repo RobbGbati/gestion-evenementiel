@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:eventing-test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+
+# Relay quasi inactif en test : on pilote le traitement manuellement
+eventing:
+  relay:
+    poll-interval-ms: 3600000
+    batch-size: 50
+    max-retries: 3
+    backoff-base-seconds: 1
+
+# Resilience neutralisee par defaut pour des transitions deterministes.
+# Le test de circuit breaker reactive son instance via @TestPropertySource.
+resilience4j:
+  retry:
+    instances:
+      eventPublisher:
+        max-attempts: 1
+  circuitbreaker:
+    instances:
+      eventPublisher:
+        minimum-number-of-calls: 1000000
+        sliding-window-size: 1000000
+
+logging:
+  level:
+    misterbil.eventing: INFO
