@@ -2,6 +2,11 @@
 
 Socle Spring Boot (projet d'étude) pour un **module de publication d'évènements** résilient et **découplé du fournisseur**. Implémente le pattern **Transactional Outbox + relay** : les évènements sont stockés en base (payload + statut), publiés de façon asynchrone, réessayés en cas d'échec, et rejouables.
 
+## Documentation
+
+- [Comprendre la gestion évènementielle](docs/gestion-evenementielle.md) — *pourquoi* ce pattern (pédagogique).
+- [Ajouter un nouvel évènement métier](docs/ajouter-un-evenement.md) — *comment* en ajouter un, étape par étape (template, ex. Paiement).
+
 ## Pourquoi ce design
 
 | Besoin | Réponse |
